@@ -26,6 +26,7 @@ class ResultsWidget extends StatelessWidget {
               const SizedBox(height: 10.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   _buildLinks(
                       title: 'Short Link',
@@ -39,19 +40,19 @@ class ResultsWidget extends StatelessWidget {
                     },
                     child: const Icon(
                       Icons.copy,
-                      size: 15.0,
+                      size: 20.0,
                     ),
                   )
                 ],
               ),
               const SizedBox(height: 10.0),
               if (shortenModel.shortUrl != null)
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: SizedBox(
-                    height: 200.0,
-                    width: 200.0,
-                    child: Center(
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: SizedBox(
+                      height: 200.0,
+                      width: 200.0,
                       child: PrettyQrView.data(
                         data: '${shortenModel.shortUrl}',
                       ),

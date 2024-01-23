@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'URL SHORTENER',
+          style: TextStyle(fontFamily: 'Kalam'),
         ),
         centerTitle: true,
       ),
