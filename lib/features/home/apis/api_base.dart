@@ -1,19 +1,31 @@
 import 'package:dio/dio.dart';
 import 'package:url_shortener/features/home/apis/apis.dart';
-import 'package:url_shortener/features/home/models/shorten_model.dart';
+import 'package:url_shortener/features/home/models/models.dart';
 
 class ApiBase {
-  static Future<ShortenModel?> getRequest(
-      {Map<String, dynamic>? queryParams}) async {
+  static Future<ApiResponse<ShortenModel?>> getRequest(
+      {Map<String, dynamic>? data}) async {
     try {
-      var res = await Dio().get(
+      var res = await Dio().post(
         Endpoints.shortenUrl,
-        queryParameters: queryParams,
+        data: data,
+        options: Options(
+          headers: {
+            'Apikey': 'fd65943d5c54409aa0d9c5ce0b791f5c',
+          },
+        ),
       );
 
-      return ShortenModel.fromJson(res.data);
+      return ApiResponse(
+          isError: false,
+          data: ShortenModel.fromJson(res.data),
+          message: 'Success');
+    } on DioException catch (e) {
+      var error = e.response?.data['message'] ?? 'Something went wrong';
+      return ApiResponse(isError: true, data: null, message: error);
     } catch (e) {
-      return null;
+      return ApiResponse(
+          isError: true, data: null, message: "Something went wrong");
     }
   }
 }

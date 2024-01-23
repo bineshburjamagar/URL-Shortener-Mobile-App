@@ -5,9 +5,13 @@ class CustomTextField extends StatelessWidget {
     super.key,
     this.hintText,
     this.labelText,
+    this.hasValidator = false,
+    required this.controller,
   });
   final String? hintText;
   final String? labelText;
+  final bool hasValidator;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,6 +26,15 @@ class CustomTextField extends StatelessWidget {
         ],
         TextFormField(
           cursorHeight: 20.0,
+          validator: hasValidator
+              ? (value) {
+                  if (value != null && value.isEmpty) {
+                    return 'This is required field.';
+                  }
+                  return null;
+                }
+              : null,
+          controller: controller,
           cursorColor: Colors.amber,
           decoration: InputDecoration(
             hintText: hintText,
