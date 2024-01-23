@@ -7,6 +7,7 @@ class AppTheme {
   );
 
   static ThemeData themeData = ThemeData(
+    fontFamily: 'Poppins',
     colorScheme: const ColorScheme.light(
       primary: Colors.orange,
     ),
