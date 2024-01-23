@@ -1,0 +1,4 @@
+#Tue Jan 23 20:20:15 NPT 2024
+base.0=D\:\\Random Apps\\url_shortener\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
