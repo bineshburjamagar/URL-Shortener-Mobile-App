@@ -34,9 +34,10 @@ class ResultsWidget extends StatelessWidget {
                   InkWell(
                     onTap: () async {
                       await Clipboard.setData(
-                              ClipboardData(text: shortenModel.shortUrl ?? ""))
-                          .then((value) =>
-                              BotToast.showText(text: 'Text Copied'));
+                        ClipboardData(
+                          text: "https://${shortenModel.shortUrl}",
+                        ),
+                      ).then((value) => BotToast.showText(text: 'Text Copied'));
                     },
                     child: const Icon(
                       Icons.copy,
@@ -54,7 +55,7 @@ class ResultsWidget extends StatelessWidget {
                       height: 200.0,
                       width: 200.0,
                       child: PrettyQrView.data(
-                        data: '${shortenModel.shortUrl}',
+                        data: 'https://${shortenModel.shortUrl}',
                       ),
                     ),
                   ),

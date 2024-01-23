@@ -10,7 +10,6 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'URL SHORTENER',
-          style: TextStyle(fontFamily: 'Kalam'),
         ),
         centerTitle: true,
       ),
@@ -31,7 +30,6 @@ class HomePage extends StatelessWidget {
               const Text(
                 'Rapidly transform lengthy URLs, easily share, with QR and elevate your online presence.',
                 style: TextStyle(
-                  fontFamily: 'Kalam',
                   fontSize: 16.0,
                   fontWeight: FontWeight.w500,
                 ),

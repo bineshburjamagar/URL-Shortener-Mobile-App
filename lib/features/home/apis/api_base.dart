@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:url_shortener/features/home/apis/apis.dart';
 import 'package:url_shortener/features/home/models/models.dart';
 
@@ -11,7 +12,7 @@ class ApiBase {
         data: data,
         options: Options(
           headers: {
-            'Apikey': 'fd65943d5c54409aa0d9c5ce0b791f5c',
+            'Apikey': dotenv.env['TOKEN'],
           },
         ),
       );
