@@ -62,6 +62,7 @@ class _ShortenFormWidgetState extends State<ShortenFormWidget> {
             ),
             if (hasBrandShortLink)
               CustomTextField(
+                hasValidator: hasBrandShortLink,
                 controller: brandedController,
                 hintText: 'favorite-link',
                 labelText: 'Enter a branded short link',
