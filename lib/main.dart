@@ -1,7 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:url_shortener/config/config.dart';
-import 'package:url_shortener/features/home/screens/screens.dart';
+import 'package:url_shortener/splash_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
       builder: BotToastInit(),
       navigatorObservers: [BotToastNavigatorObserver()],
       theme: AppTheme.themeData,
-      home: const HomePage(),
+      home: const SplashPage(),
     );
   }
 }
