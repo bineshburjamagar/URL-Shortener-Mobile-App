@@ -5,7 +5,19 @@ class AppTheme {
     borderSide: const BorderSide(color: Colors.amber),
     borderRadius: BorderRadius.circular(10.0),
   );
+
   static ThemeData themeData = ThemeData(
+    colorScheme: const ColorScheme.light(
+      primary: Colors.orange,
+    ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+    ),
     scaffoldBackgroundColor: const Color.fromARGB(255, 255, 246, 246),
     inputDecorationTheme: InputDecorationTheme(
         isDense: true,

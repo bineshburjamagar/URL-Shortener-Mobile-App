@@ -15,9 +15,7 @@ class CustomSwitch extends StatelessWidget {
       children: [
         const Text(
           'Branded short link',
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-          ),
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.0),
         ),
         SizedBox(
           height: 40.0,

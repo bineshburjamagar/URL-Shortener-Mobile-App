@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool brandShortLink = false;
+  bool hasBrandShortLink = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               const Text(
                 'Shorten a long link',
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -50,13 +50,29 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20.0),
               CustomSwitch(
-                value: brandShortLink,
+                value: hasBrandShortLink,
                 onChanged: (p0) {
                   log(p0.toString());
                   setState(() {
-                    brandShortLink = p0;
+                    hasBrandShortLink = p0;
                   });
                 },
+              ),
+              if (hasBrandShortLink)
+                const CustomTextField(
+                  hintText: 'favorite-link',
+                  labelText: 'Enter a branded short link',
+                ),
+              const SizedBox(height: 20.0),
+              SizedBox(
+                width: double.infinity,
+                height: 50.0,
+                child: FilledButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Shorten URL',
+                  ),
+                ),
               )
             ],
           ),
