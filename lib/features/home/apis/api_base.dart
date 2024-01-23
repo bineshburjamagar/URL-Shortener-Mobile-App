@@ -22,7 +22,11 @@ class ApiBase {
           message: 'Success');
     } on DioException catch (e) {
       var error = e.response?.data['message'] ?? 'Something went wrong';
-      return ApiResponse(isError: true, data: null, message: error);
+
+      var error1 = e.response?.data['errors'] != []
+          ? e.response?.data['errors'][0]['message']
+          : error;
+      return ApiResponse(isError: true, data: null, message: error1);
     } catch (e) {
       return ApiResponse(
           isError: true, data: null, message: "Something went wrong");
